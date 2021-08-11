@@ -1,0 +1,8 @@
+spec:
+  containers:
+  - name: alpine-base
+    image: piwi3910/base:alpine_latest
+    command:
+    - sleep
+    args:
+    - 99d  
