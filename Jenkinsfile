@@ -21,11 +21,11 @@ pipeline {
             steps {
                 container('alpine-base') {
                     script {
-                        sh 'su - jenkins'
-                        sh 'cd ${WORKSPACE}'
-                        sh 'abuild checksum'
-                        sh 'sudo abuild-keygen -a -i -n'
-                        sh 'abuild -r'     
+                        sh 'su - jenkins
+                         && cd ${WORKSPACE}
+                         && abuild checksum
+                         && sudo abuild-keygen -a -i -n
+                         && abuild -r'     
                     }
                 }
             }    
