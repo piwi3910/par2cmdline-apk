@@ -9,7 +9,9 @@ pipeline {
             steps {
                 container('alpine-base') {
                     script {
-                        sh 'echo "hello"'    
+                        sh 'echo "hello"'
+                        sh 'whoami'
+                        sh 'pwd'  
                     }
                 }
             }    
