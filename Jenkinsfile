@@ -21,7 +21,7 @@ pipeline {
             steps {
                 container('alpine-base') {
                     script {
-                        sh """sudo -u jenkins /bin/bash
+                        sh """sudo -u jenkins /bin/bash -c "whoami"
                         whoami
                         cd ${WORKSPACE}
                         abuild checksum
