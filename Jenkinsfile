@@ -23,7 +23,7 @@ pipeline {
                     script {
                         sh 'sudo -u jenkins /bin/bash -c "cd ${WORKSPACE}"'
                         sh 'sudo -u jenkins /bin/bash -c "abuild checksum"'
-                        sh 'sudo -u jenkins /bin/bash -c "sudo abuild-keygen -a -i -n"'
+                        sh 'sudo -u jenkins /bin/bash -c "abuild-keygen -a -i -n"'
                         sh 'sudo -u jenkins /bin/bash -c "abuild -r"'
                     }
                 }
