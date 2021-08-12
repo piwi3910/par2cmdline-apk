@@ -1,6 +1,12 @@
 spec:
   containers:
-  - name: alpine-base
+  - name: builder
+    image: piwi3910/base:alpine_latest
+    command:
+    - sleep
+    args:
+    - 99d
+  - name: tester
     image: piwi3910/base:alpine_latest
     command:
     - sleep
