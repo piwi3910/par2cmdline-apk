@@ -32,7 +32,21 @@ pipeline {
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild-keygen -a -i -n"'
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild -r"'
                     }
-                    archiveArtifacts artifacts: '/home/jenkins/packages/workspace/aarch64/*.apk, /home/${build_user}/packages/workspace/aarch64/APKINDEX.tar.gz ', onlyIfSuccessful: true, fingerprint: true
+                    nexusArtifactUploader {
+                        nexusVersion('nexus3')
+                        protocol('https')
+                        nexusUrl('repo.watteel.dev')
+                        groupId('sp.sd')
+                        version('3')
+                        repository('apk')
+                        credentialsId('705f4b11-7588-47f4-97ae-0834eec4dcd9')
+                        artifact {
+                            artifactId('par2cmdline')
+                            type('apk')
+                            classifier('debug')
+                            file('/home/jenkins/packages/workspace/aarch64/par2cmdline-0.8.1-r1.apk')    
+                        }    
+                    }
                 }
             }    
         }
