@@ -1,7 +1,7 @@
 # Contributor:
 # Maintainer: Pascal Watteel <pascal@watteel.com>
 pkgname=par2cmdline
-pkgver=0.8.1
+pkgver=__VERSION__ #Will be replaced by variable injection
 pkgrel=1
 pkgdesc="Par2cmdline is a PAR 2.0 compatible file verification and repair tool"
 url="https://github.com/Parchive/par2cmdline"
