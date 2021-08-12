@@ -31,10 +31,8 @@ pipeline {
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild checksum"'
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild-keygen -a -i -n"'
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild -r"'
-                        sh 'sleep 99d'
                     }
-                    // archiveArtifacts artifacts: '../../packages/workspace/**/*.apk, ../../packages/workspace/aarch64/APKINDEX.tar.gz ', onlyIfSuccessful: true, fingerprint: true
-
+                    archiveArtifacts artifacts: '/home/${build_user}/packages/workspace/aarch64/*.apk, /home/${build_user}/packages/workspace/aarch64/APKINDEX.tar.gz ', onlyIfSuccessful: true, fingerprint: true
                 }
             }    
         }
