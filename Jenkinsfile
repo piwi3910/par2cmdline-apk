@@ -31,6 +31,7 @@ pipeline {
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild checksum"'
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild-keygen -a -i -n"'
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild -r"'
+                        sh 'ls -lah ../../packages/workspace/'
                     }
                     archiveArtifacts artifacts: '../../packages/workspace/aarch64/*', onlyIfSuccessful: true, fingerprint: true
                 }
