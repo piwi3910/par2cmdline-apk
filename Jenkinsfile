@@ -32,7 +32,7 @@ pipeline {
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild-keygen -a -i -n"'
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild -r"'
                     }
-                    archiveArtifacts artifacts: '/home/${build_user}/packages/workspace/aarch64/*.apk, /home/${build_user}/packages/workspace/aarch64/APKINDEX.tar.gz ', onlyIfSuccessful: true, fingerprint: true
+                    archiveArtifacts artifacts: '/home/jenkins/packages/workspace/aarch64/*.apk, /home/${build_user}/packages/workspace/aarch64/APKINDEX.tar.gz ', onlyIfSuccessful: true, fingerprint: true
                 }
             }    
         }
