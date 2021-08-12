@@ -32,6 +32,7 @@ pipeline {
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild-keygen -a -i -n"'
                         sh 'sudo -u ${build_user} /bin/bash -c "abuild -r"'
                     }
+                    archiveArtifacts artifacts: '../packages/${build_user}/aarch64/*', onlyIfSuccessful: true, fingerprint: true
                 }
             }    
         }
